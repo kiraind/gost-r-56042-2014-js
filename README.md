@@ -42,7 +42,7 @@ const pngBuffer = await PaymentCode.toBuffer({
 
 ### toBuffer
 
-▸ **toBuffer**(`details`: [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToBufferOptions): Promise\<Buffer>
+▸ **toBuffer**(`details`: [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToBufferOptions): Promise\<Buffer>
 
 *Defined in [index.ts:31](https://github.com/kiraind/gost-r-56042-2014-js/blob/a2eb661/src/index.ts#L31)*
 
@@ -52,7 +52,7 @@ const pngBuffer = await PaymentCode.toBuffer({
 
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
-`details` | [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
+`details` | [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
 `options` | QRCodeToBufferOptions | {} | параметры генерации qr-кода  |
 
 **Returns:** Promise\<Buffer>
@@ -61,7 +61,7 @@ ___
 
 ### toCanvas
 
-▸ **toCanvas**(`canvas`: HTMLCanvasElement, `details`: [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeRenderersOptions): Promise\<any>
+▸ **toCanvas**(`canvas`: HTMLCanvasElement, `details`: [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeRenderersOptions): Promise\<any>
 
 *Defined in [index.ts:44](https://github.com/kiraind/gost-r-56042-2014-js/blob/a2eb661/src/index.ts#L44)*
 
@@ -72,7 +72,7 @@ ___
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
 `canvas` | HTMLCanvasElement | - |  |
-`details` | [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
+`details` | [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
 `options` | QRCodeRenderersOptions | {} | параметры генерации qr-кода  |
 
 **Returns:** Promise\<any>
@@ -81,7 +81,7 @@ ___
 
 ### toDataURL
 
-▸ **toDataURL**(`details`: [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToDataURLOptions): Promise\<string>
+▸ **toDataURL**(`details`: [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToDataURLOptions): Promise\<string>
 
 *Defined in [index.ts:54](https://github.com/kiraind/gost-r-56042-2014-js/blob/a2eb661/src/index.ts#L54)*
 
@@ -91,7 +91,7 @@ ___
 
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
-`details` | [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
+`details` | [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
 `options` | QRCodeToDataURLOptions | {} | параметры генерации qr-кода  |
 
 **Returns:** Promise\<string>
@@ -100,7 +100,7 @@ ___
 
 ### toFile
 
-▸ **toFile**(`path`: string, `details`: [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToFileOptions): Promise\<any>
+▸ **toFile**(`path`: string, `details`: [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToFileOptions): Promise\<any>
 
 *Defined in [index.ts:66](https://github.com/kiraind/gost-r-56042-2014-js/blob/a2eb661/src/index.ts#L66)*
 
@@ -111,7 +111,7 @@ ___
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
 `path` | string | - |  |
-`details` | [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
+`details` | [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
 `options` | QRCodeToFileOptions | {} | параметры генерации qr-кода  |
 
 **Returns:** Promise\<any>
@@ -120,7 +120,7 @@ ___
 
 ### toFileStream
 
-▸ **toFileStream**(`stream`: stream.Writable, `details`: [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToFileStreamOptions): Promise\<any>
+▸ **toFileStream**(`stream`: stream.Writable, `details`: [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md), `options?`: QRCodeToFileStreamOptions): Promise\<any>
 
 *Defined in [index.ts:78](https://github.com/kiraind/gost-r-56042-2014-js/blob/a2eb661/src/index.ts#L78)*
 
@@ -131,7 +131,7 @@ ___
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
 `stream` | stream.Writable | - |  |
-`details` | [PaymentDetails](../interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
+`details` | [PaymentDetails](docs/interfaces/_makepaymentstring_.paymentdetails.md) | - |  |
 `options` | QRCodeToFileStreamOptions | {} | параметры генерации qr-кода  |
 
 **Returns:** Promise\<any>
