@@ -1,5 +1,4 @@
 const version = '0001' // Версия формата
-const encoding = '2' // Код UTF-8
 
 export interface PaymentDetails {
   // Обязательные реквизиты
@@ -183,7 +182,7 @@ export default function makePaymentString (details: PaymentDetails) : string {
   let paymentString = 'ST'
 
   paymentString += version
-  paymentString += encoding
+  paymentString += '0' // плейсхолдер для кодировки
 
   // Обязательные реквизиты
 

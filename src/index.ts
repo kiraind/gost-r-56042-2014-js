@@ -1,6 +1,7 @@
 import * as stream from 'stream'
 import * as QRCode from 'qrcode'
 import {
+  QRCodeSegment,
   QRCodeToBufferOptions,
   QRCodeRenderersOptions,
   QRCodeToDataURLOptions,
@@ -9,6 +10,18 @@ import {
 } from 'qrcode'
 
 import makePaymentString, { PaymentDetails } from './makePaymentString'
+import encodePaymentString from './encodePaymentString'
+
+function preparePaymentString (details: PaymentDetails): QRCodeSegment {
+  const paymentString = makePaymentString(details)
+
+  return {
+    // https://github.com/soldair/node-qrcode#binary-data
+    // @ts-ignore
+    data: encodePaymentString(paymentString),
+    mode: 'byte'
+  }
+}
 
 /**
  * Генерирует Buffer с QR-кодом в формате png
@@ -16,13 +29,12 @@ import makePaymentString, { PaymentDetails } from './makePaymentString'
  * @param {QRCodeToBufferOptions} options параметры генерации qr-кода
  */
 export async function toBuffer (details: PaymentDetails, options: QRCodeToBufferOptions = {}) {
-  const paymentString = makePaymentString(details)
+  const segment = preparePaymentString(details)
 
-  return await QRCode.toBuffer(paymentString, options)
+  return await QRCode.toBuffer([segment], options)
 }
 
-// Ублажение линтера
-/* global HTMLCanvasElement */
+/* global HTMLCanvasElement */// Ублажение линтера
 /**
  * Рисует QR-код на HTMLCanvasElement
  * @param {} canvas
@@ -30,9 +42,8 @@ export async function toBuffer (details: PaymentDetails, options: QRCodeToBuffer
  * @param {QRCodeRenderersOptions} options параметры генерации qr-кода
  */
 export async function toCanvas (canvas: HTMLCanvasElement, details: PaymentDetails, options: QRCodeRenderersOptions = {}) {
-  const paymentString = makePaymentString(details)
-
-  return await QRCode.toCanvas(canvas, paymentString, options)
+  const segment = preparePaymentString(details)
+  return await QRCode.toCanvas(canvas, [segment], options)
 }
 
 /**
@@ -41,9 +52,9 @@ export async function toCanvas (canvas: HTMLCanvasElement, details: PaymentDetai
  * @param {QRCodeToDataURLOptions} options параметры генерации qr-кода
  */
 export async function toDataURL (details: PaymentDetails, options: QRCodeToDataURLOptions = {}) {
-  const paymentString = makePaymentString(details)
+  const segment = preparePaymentString(details)
 
-  return await QRCode.toDataURL(paymentString, options)
+  return await QRCode.toDataURL([segment], options)
 }
 
 /**
@@ -53,9 +64,9 @@ export async function toDataURL (details: PaymentDetails, options: QRCodeToDataU
  * @param {QRCodeToFileOptions} options параметры генерации qr-кода
  */
 export async function toFile (path: string, details: PaymentDetails, options: QRCodeToFileOptions = {}) {
-  const paymentString = makePaymentString(details)
+  const segment = preparePaymentString(details)
 
-  return await QRCode.toFile(path, paymentString, options)
+  return await QRCode.toFile(path, [segment], options)
 }
 
 /**
@@ -65,7 +76,7 @@ export async function toFile (path: string, details: PaymentDetails, options: QR
  * @param {QRCodeToFileStreamOptions} options параметры генерации qr-кода
  */
 export async function toFileStream (stream: stream.Writable, details: PaymentDetails, options: QRCodeToFileStreamOptions = {}) {
-  const paymentString = makePaymentString(details)
+  const segment = preparePaymentString(details)
 
-  return await QRCode.toFileStream(stream, paymentString, options)
+  return await QRCode.toFileStream(stream, [segment], options)
 }

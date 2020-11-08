@@ -27,6 +27,7 @@
   "homepage": "https://github.com/kiraind/gost-r-56042-2014-js#readme",
   "dependencies": {
     "@types/qrcode": "^1.3.5",
+    "iconv-lite": "^0.6.2",
     "qrcode": "^1.4.4"
   },
   "devDependencies": {
