@@ -8,13 +8,13 @@
 ## Установка
 
 ```bash
-npm i gost-r-56042-2014
+npm i @kiraind/gost-r-56042-2014
 ```
 
 ## Пример использования:
 
 ```js
-import * as PaymentCode from 'gost-r-56042-2014'
+import * as PaymentCode from '@kiraind/gost-r-56042-2014'
 
 const pngBuffer = await PaymentCode.toBuffer({
   Name: 'ООО "Три кита"',

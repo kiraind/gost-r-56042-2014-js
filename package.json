@@ -1,5 +1,5 @@
 {
-  "name": "gost-r-56042-2014",
+  "name": "@kiraind/gost-r-56042-2014",
   "version": "1.0.0",
   "description": "Генератор QR-кодов для оплаты банковским переводом",
   "main": "lib/index.js",
