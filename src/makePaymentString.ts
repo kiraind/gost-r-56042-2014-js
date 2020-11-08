@@ -176,7 +176,7 @@ export interface PaymentDetails {
   /**
    * Технический код, рекомендуемый для заполнения поставщиком услуг. Может использоваться принимающей организацией для вызова соответствующей обрабатывающей ИТ-системы. Перечень значений кода представлен в приложении Г.
    */
-  TechCode?: string,
+  TechCode?: number,
 }
 
 export default function makePaymentString (details: PaymentDetails) : string {
@@ -420,7 +420,7 @@ export default function makePaymentString (details: PaymentDetails) : string {
 
   // TechCode
   if (details.TechCode) {
-    paymentString += `|TechCode=${details.TechCode}`
+    paymentString += `|TechCode=${details.TechCode.toString().padStart(2, '0')}`
   }
 
   return paymentString
