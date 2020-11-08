@@ -8,10 +8,7 @@ import {
   QRCodeToFileStreamOptions
 } from 'qrcode'
 
-import {
-  PaymentDetails,
-  makePaymentString
-} from './makePaymentString'
+import makePaymentString, { PaymentDetails } from './makePaymentString'
 
 /**
  * Генерирует Buffer с QR-кодом в формате png
